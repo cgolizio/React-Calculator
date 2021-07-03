@@ -9,6 +9,8 @@ const StyledButton = styled.button`
   font-size: 8rem;
   border-radius: 25px;
   margin: 1px;
+  /* font-family: 'Quicksand', sans-serif; */
+  font-family: 'Poiret One', cursive;
 
   // dynamic properties
   color: ${props => props.textcolor || 'ghostwhite'};

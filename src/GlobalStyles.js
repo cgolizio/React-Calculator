@@ -10,8 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     width: 100%;
     user-select: none;
-    font-family: 'Lexend Peta', sans-serif;
-    font-weight: 300;
+    /* font-family: 'Quicksand', sans-serif; */
   }
   body {
     background: ghostwhite;
