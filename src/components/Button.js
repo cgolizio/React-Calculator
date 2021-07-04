@@ -9,6 +9,8 @@ const StyledButton = styled.button`
   font-size: 8rem;
   border-radius: 25px;
   margin: 1px;
+  /* font-family: 'Quicksand', sans-serif; */
+  font-family: 'Poiret One', cursive;
 
   // dynamic properties
   color: ${props => props.textcolor || 'ghostwhite'};
@@ -24,6 +26,7 @@ const StyledButton = styled.button`
     color: #ff0080;
     cursor: grabbing;
     background: #b2ff00;
+    transform: scale(1.08);
   }
 `;
 
@@ -45,8 +48,10 @@ const Button = (props) => {
       textcolor={textcolor}
       colorigin={colorigin}
       colend={colend}
+      value={ val ? val : '*' }
+      onClick={action}
     >
-      {val}
+      { val ? val : 'x' }
     </StyledButton>
   );
 };
