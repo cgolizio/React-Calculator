@@ -13,6 +13,6 @@ export const GlobalStyles = createGlobalStyle`
     /* font-family: 'Quicksand', sans-serif; */
   }
   body {
-    background: ghostwhite;
+    background: #090033;
   }
 `;
