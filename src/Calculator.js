@@ -19,6 +19,7 @@ const Calculator = () => {
   const [ currentVal, setCurrentVal ] = useState('0');
   const [ havePrevCalc, setHavePrevCalc ] = useState(false);
   const [ tempFormulaDisplay, setTempFormulaDisplay ] = useState('');
+  const [ isPositive, setIsPositive ] = useState(true);
 
   const endsWithOperator = /[*+-/]$/;
   const containsDecimal = /[.]/;
@@ -28,7 +29,19 @@ const Calculator = () => {
     setCurrentVal('0')
     setHavePrevCalc(false);
     setTempFormulaDisplay('');
+    setIsPositive(true);
   };
+
+  useEffect(() => {
+    if (!isPositive) {
+      setCurrentVal(() => currentVal * -1);
+    }
+  }, [isPositive]);
+
+  const handleNegator = (e) => {
+    const { value } = e.target;
+    setIsPositive(!isPositive);
+  }
 
   const handleOperator = e => {
     const { value } = e.target;
@@ -47,6 +60,12 @@ const Calculator = () => {
 
     setCurrentVal('');
   };
+
+  useEffect(() => {
+    if (currentVal === '+/-') {
+      console.log('LOOK HERE', currentVal);
+    }
+  }, [currentVal]);
 
   const handleDigit = e => {
     const { value } = e.target;
@@ -92,11 +111,17 @@ const Calculator = () => {
 
   };
 
+  console.log('FORMULA', formula);
+  console.log('CURRENTVAL', currentVal)
+  console.log('HAVE PREVIOUS CALC', havePrevCalc)
+  console.log('TEMP FORMULA DISPLAY', tempFormulaDisplay)
+  console.log('IS POSITIVE', isPositive);
+
   return (
     <StyledCalculator>
 
       <Screens
-        formula={ setHavePrevCalc ? tempFormulaDisplay : formula }
+        formula={ havePrevCalc ? tempFormulaDisplay : formula }
         show={currentVal}
       />
 
@@ -106,6 +131,7 @@ const Calculator = () => {
         digit={handleDigit}
         decimal={handleDecimal}
         calculate={handleCalculation}
+        negative={handleNegator}
       />
 
     </StyledCalculator>

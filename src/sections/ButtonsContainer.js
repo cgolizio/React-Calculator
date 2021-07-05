@@ -3,14 +3,20 @@ import styled from 'styled-components';
 import Button from '../components/Button';
 
 const StyledButtonsContainer = styled.div`
-  width: 95%;
-  height: calc(75% - 5px);
+  width: 85%;
+  height: calc(75% - 15px);
+  padding-bottom: 10px;
   display: grid;
   margin-left: 5px;
   margin-right: 5px;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(5, 20%);
 `;
+
+// const StyledButtonsContainerBox = styled.div`
+//   width: 100%;
+//   height: 100%;
+// `;
 
 
 const ButtonsContainer = (props) => {
@@ -20,11 +26,7 @@ const ButtonsContainer = (props) => {
     digit,
     decimal,
     calculate,
-    // handleMemoryClear,
-    // handleOperator,
-    // handleDigit,
-    // handleDecimal,
-    // handleCalculation
+    negative
   } = props;
 
   return (
@@ -32,22 +34,28 @@ const ButtonsContainer = (props) => {
       {/* row one start */}
       <Button
         val='C'
-        btncolor='silver'
+        btncolor='#b2ff00'
         textcolor='rgb(9,11,23)'
+        border='#94D400'
+        hover='#FF3355'
         group='utility-btn'
         action={clear}
       />
       <Button
         val='+/-'
-        btncolor='silver'
+        btncolor='#b2ff00'
         textcolor='rgb(9,11,23)'
+        border='#94D400'
+        hover='#FF3355'
         group='utility-btn'
-        // action={}
+        action={negative}
       />
       <Button
         val='%'
-        btncolor='silver'
+        btncolor='#b2ff00'
         textcolor='rgb(9,11,23)'
+        border='#94D400'
+        hover='#FF3355'
         group='utility-btn'
         // action={}
       />
@@ -55,6 +63,8 @@ const ButtonsContainer = (props) => {
         val='/'
         btncolor='#0fa'
         textcolor='rgb(9,11,23)'
+        border='#00D68F'
+        hover='#736BFB'
         group='action-btn'
         action={operator}
       />
@@ -77,6 +87,8 @@ const ButtonsContainer = (props) => {
       <Button
         btncolor='#0fa'
         textcolor='rgb(9,11,23)'
+        border='#00D68F'
+        hover='#736BFB'
         group='action-btn'
         action={operator}
       />
@@ -100,6 +112,8 @@ const ButtonsContainer = (props) => {
         val='-'
         btncolor='#0fa'
         textcolor='rgb(9,11,23)'
+        border='#00D68F'
+        hover='#736BFB'
         group='action-btn'
         action={operator}
       />
@@ -123,6 +137,8 @@ const ButtonsContainer = (props) => {
         val='+'
         btncolor='#0fa'
         textcolor='rgb(9,11,23)'
+        border='#00D68F'
+        hover='#736BFB'
         group='action-btn'
         action={operator}
       />
@@ -144,6 +160,8 @@ const ButtonsContainer = (props) => {
         val='='
         btncolor='#0fa'
         textcolor='rgb(9,11,23)'
+        border='#00D68F'
+        hover='#736BFB'
         group='action-btn'
         action={calculate}
       />

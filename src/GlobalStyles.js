@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     /* font-family: 'Quicksand', sans-serif; */
   }
   body {
-    background: #090033;
+    /* background: #090033; */
+    background: linear-gradient(to bottom, #170082 0%, #0C0045 40%, #090033 100%);
   }
 `;
